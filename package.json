@@ -1,0 +1,30 @@
+{
+  "name": "scanany-service",
+  "version": "1.0.0",
+  "description": "Scanany WEB Service",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --harmony server.js --prod",
+    "dev": "nodemon server.js --exec babel-node --presets babel-preset-env"
+  },
+  "author": "Andrey Boldak",
+  "license": "MIT",
+  "dependencies": {
+    "@molfar/scanany": "github:boldak/scanany",
+    "axios": "^0.21.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "js-yaml": "^4.1.0",
+    "lodash": "^4.17.20",
+    "mime": "^2.5.2",
+    "nodemon": "^2.0.6"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.2.2",
+    "babel-preset-env": "^1.7.0"
+  }
+}
