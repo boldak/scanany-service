@@ -6,9 +6,15 @@ module.exports = {
     method: "post",
     path: "/",
     handler: async (req, res) => {
-    	let script = (isString(req.body)) ? JSON.parse(req.body) : req.body
-    	let scraper = new Scraper()
-    	let result = await scraper.execute(script)
-    	res.send(result)
+    	let result
+    	try {
+    		let script = (isString(req.body)) ? JSON.parse(req.body) : req.body
+	    	let scraper = new Scraper()
+	    	result = await scraper.execute(script)	
+    	} catch (e) {
+    		result = { error: e.toString()}
+    	} finally {
+    		res.send(result)	
+    	}
     }
 }
