@@ -8,6 +8,10 @@
     "start": "node --harmony server.js --prod",
     "dev": "nodemon server.js --exec babel-node --presets babel-preset-env"
   },
+  "engines": {
+    "node": "14.13.1",
+    "npm": "6.14.8"
+  },
   "author": "Andrey Boldak",
   "license": "MIT",
   "dependencies": {
