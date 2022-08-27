@@ -8,9 +8,11 @@ module.exports = {
     handler: async (req, res) => {
     	let result
     	try {
-    		let script = (isString(req.body)) ? JSON.parse(req.body) : req.body
-	    	let scraper = new Scraper()
-	    	result = await scraper.execute(script)	
+            // console.log(JSON.stringify(req.body, null, " "))
+    		let script = req.body.script//(isString(req.body)) ? JSON.parse(req.body) : req.body
+	    	let params = req.body.params || {}
+            let scraper = new Scraper()
+	    	result = await scraper.execute(script, params)	
     	} catch (e) {
     		result = { error: e.toString()}
     	} finally {

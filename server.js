@@ -25,7 +25,7 @@ app.use(bodyParser.json({
 let routes = [require("./src/javascript/service")]
 
 app.get("/", (req,res) => {
-	res.redirect("http://nevada-jace-dev.herokuapp.com/design/scanany#/")
+	res.redirect(config.service.redirect)
 })
 
 routes.forEach( route => {
