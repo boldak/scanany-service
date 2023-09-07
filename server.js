@@ -14,12 +14,12 @@ app.use(bodyParser.text());
 
 app.use(bodyParser.urlencoded({
         parameterLimit: 100000,
-        limit: '50mb',
+        limit: '100mb',
         extended: true
     }));
 
 app.use(bodyParser.json({
-    limit: '50mb'
+    limit: '100mb'
 }))
 
 let routes = [require("./src/javascript/service")]
